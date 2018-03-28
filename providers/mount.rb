@@ -34,7 +34,13 @@ action :run do
       owner 'root'
       group 'root'
       mode '0600'
-      content "username=#{new_resource.username}\npassword=#{new_resource.password}\n"
+      content <<-EOH
+username=#{new_resource.username}
+password=#{new_resource.password}
+#{unless new_resource.domain.nil?
+"domain=" + new_resource.domain 
+end}
+EOH
       sensitive true
       action :create
     end

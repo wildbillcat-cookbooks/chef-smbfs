@@ -1,5 +1,9 @@
 ## v0.6.0:
 
+## v0.5.1:
+
+* Added support for domain in the credentials
+
 ## v0.4.0:
 
 * Added the ability to create the mount folder
